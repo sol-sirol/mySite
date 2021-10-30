@@ -1,0 +1,73 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'libs';
+
+.container{
+  max-width: $maxWidthContainer;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.max-container{
+  max-width: $maxWidth;
+  margin: 0 auto;  
+}
+
+body{
+  font-family: $fontFamili;
+  color: $textColor;
+  font-size: 14px;
+}
+
+.draft-text{
+}
+
+.title{
+}
+
+.title-bottom{
+}
+
+.btn-blac{
+  &__img{
+  }
+}
+.btn-white{
+  &__img{
+  }
+}
+
+// *JS стили* ====
+._none{
+  display: none !important;
+}
+._hedenMap{
+  position: absolute;
+  height: 0 !important;
+  left: 0;
+  bottom: 200px;
+  z-index: -1;
+}
+.unselectable {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+.visuallyhidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  padding: 0px;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+}
+// ====
