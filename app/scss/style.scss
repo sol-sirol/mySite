@@ -51,11 +51,12 @@ footer{
   margin-top: auto;
 }
 // FOOTER К НИЗУ =====================================================
-body {
-  overflow: hidden;
-}
+
 .wrapper {
   position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 
   &__menu-wrapper {
     position: absolute;
@@ -68,25 +69,24 @@ body {
   }
 
   &__main-content {
-    overflow-x: hidden;
-    overflow-y: scroll;
+
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     z-index: 2;
-    background-color: tomato;
+    background-color: #181823;
     transition: all 0.5s;
   }
   &__main-content._active {
-    overflow-y: hidden;
+    overflow-y: hidden; // пока не работает
     border-radius: 25px;
     transform: translate(330px, -150px);
   }
   &__main-content._active-following {
     transition: all 0.5s;
-    overflow-y: hidden;
+    overflow-y: hidden; // пока не работает
     background-color: #fff;
     * {
       opacity: 0;
@@ -97,7 +97,6 @@ body {
 }
 .main-content-wrapper {
 }
-
 
 // HEADER ===============================================================================================================================
 // HEADER ===============================================================================================================================
