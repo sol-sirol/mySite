@@ -51,7 +51,52 @@ footer{
   margin-top: auto;
 }
 // FOOTER К НИЗУ =====================================================
+body {
+  overflow: hidden;
+}
+.wrapper {
+  position: relative;
 
+  &__menu-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background-color: aqua;
+  }
+
+  &__main-content {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    background-color: tomato;
+    transition: all 0.5s;
+  }
+  &__main-content._active {
+    overflow-y: hidden;
+    border-radius: 25px;
+    transform: translate(330px, -150px);
+  }
+  &__main-content._active-following {
+    transition: all 0.5s;
+    overflow-y: hidden;
+    background-color: #fff;
+    * {
+      opacity: 0;
+    }
+  }
+}
+.menu-wrapper {
+}
+.main-content-wrapper {
+}
 
 
 // HEADER ===============================================================================================================================

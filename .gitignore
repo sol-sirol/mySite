@@ -1,5 +1,4 @@
 node_modules
-handmade
 dist
 package-lock.json
 main.min.js
