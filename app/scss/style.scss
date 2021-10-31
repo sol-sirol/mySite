@@ -6,9 +6,9 @@
 
 // ПОДКЛЮЧЕНИЕ ШРИШТОВ =======================================================================================
 // &display=swap
-// &subset=cyrillic-ext ДЛЯ РУ /// вместе???
+// &subset=cyrillic-ext ДЛЯ РУ
 
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap&subset=cyrillic-ext');
 
 // ПОДКЛЮЧЕНИЕ ШРИШТОВ =======================================================================================
 
@@ -65,18 +65,17 @@ footer{
     width: 100vw;
     height: 100vh;
     z-index: 1;
-    background-color: aqua;
+    background-color: #5221E690;
   }
 
   &__main-content {
-
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     z-index: 2;
-    background-color: #181823;
+    background-color: #000;
     transition: all 0.5s;
   }
   &__main-content._active {
@@ -94,12 +93,146 @@ footer{
   }
 }
 .menu-wrapper {
+
+  &__funny-text {
+    position: absolute;
+    width: 100%;
+    bottom: 10%;
+    left: 0;
+    text-align: center;
+  }
 }
 .main-content-wrapper {
 }
 
 // HEADER ===============================================================================================================================
 // HEADER ===============================================================================================================================
+@media (any-hover: hover) {
+  .wrapper__main-content._active .header__button span{
+    width: 0px;
+    transition: all 0.2s;
+  }         
+}
+.header {
+  position: fixed;
+  width: 100%;
+
+  &__wrapper {
+    background-color: #000;
+  }
+
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__button {
+    cursor: pointer;
+    padding: 5px;
+
+    span {
+      display: block;
+      @include adaptiv-value(width, 35, 25, 1);
+      height: 2px;
+      background-color: #fff;
+      transition: all 0.2s ease 0.3s;
+    }
+    @media (any-hover: hover) {
+      span::before {
+        content: '';
+        display: block;
+        width: 0px;
+        height: 2px;
+        background-color: $mainColor;
+      }
+      span:nth-child(1)::before {
+        transition: all 0.3s ease 0.2s;
+      }
+      span:nth-child(2)::before {
+        transition: all 0.3s ease 0.1s;
+      }
+      span:nth-child(3)::before {
+        transition: all 0.3s ease 0s;
+      }
+    }
+    span:not(:last-child) {
+      @include adaptiv-value(margin-bottom, 8, 6, 1);
+    }      
+  }
+  @media (any-hover: hover) {
+    &__button:hover {
+      span::before {
+        @include adaptiv-value(width, 35, 25, 1);
+      }
+    }        
+  }
+
+  &__nav {
+  }
+}
+
+.nav-header {
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    li {
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+      background-color: $mainColor;
+    }
+    li::before {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      display: block;
+      background-color: #000;
+      transition: all 0.3s ease 0s;
+    }
+    li::after {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 50%;
+      width: 50%;
+      height: 100%;
+      display: block;
+      background-color: #000;
+      transition: all 0.3s ease 0s;
+    }
+    li:hover::before{
+      transform: translateX(-100%);
+    }
+    li:hover::after{
+      transform: translateX(100%);
+    }
+  }
+  
+  &__link {
+    position: relative;
+    display: block;
+    z-index: 3;
+    @include adaptiv-value(padding-top, 18, 12, 1);
+    @include adaptiv-value(padding-bottom, 18, 12, 1);
+    @include adaptiv-value(padding-left, 20, 14, 1);
+    @include adaptiv-value(padding-right, 20, 14, 1);
+  }
+  // &__link:hover {
+  //   background-color: $mainColor;
+  // }
+}
 
 // HEADER* ===============================================================================================================================
 // HEADER* ===============================================================================================================================

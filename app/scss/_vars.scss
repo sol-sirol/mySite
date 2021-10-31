@@ -1,9 +1,9 @@
 // ПЕРЕМЕННЫЕ ШИРИН ===================================
 $minWidth: 280px;
-$maxWidth: 1400px;  /// вопрос по адаптивному свойству
-$maxWidthContainer: 1200px;
-$maxWidth-NoPx: 1400;
-$maxWidthContainer-NoPx: 1200;
+$maxWidth: 1440px;  /// вопрос по адаптивному свойству
+$maxWidthContainer: 1296px;
+$maxWidth-NoPx: 1440;
+$maxWidthContainer-NoPx: 1296;
 
 
 $md1: $maxWidthContainer-NoPx + 12;
@@ -16,12 +16,15 @@ $md4: 479.98;
 // ПЕРЕМЕННЫЕ ЦВЕТА ТЕКСТА ===================================
 
 $textColor: #fff;
+$mainColor: #5221E6;
+$grey: #181823;
 
 // ПЕРЕМЕННЫЕ ЦВЕТА ТЕКСТА ===================================
 
 
 // ПЕРЕМЕННЫЕ СЕМЕЙСТВО ШРИФТОВ ===================================
-$fontFamili: 'TT Hoves';
+$FFR: 'Raleway', sans-serif;
+$FFS: 'Source Sans Pro', sans-serif;
 
 
 // ПЕРЕМЕННЫЕ СЕМЕЙСТВО ШРИФТОВ ===================================

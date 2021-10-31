@@ -6,7 +6,10 @@ const buttonOpen = document.querySelector(".button-open");
 buttonClous.addEventListener("click", () => {
   mainContent.classList.remove("_active")
 })
-buttonClousLink.addEventListener("click", () => {
+buttonClousLink.addEventListener("click", (e) => {
+  //e.preventDefault();
+  //setTimeout(() => window.location.replace(e.target.href), 500);
+  
   mainContent.classList.remove("_active");
   mainContent.classList.add("_active-following");
 })

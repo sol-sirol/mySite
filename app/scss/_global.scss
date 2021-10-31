@@ -29,9 +29,9 @@
 }
 
 body{
-  font-family: $fontFamili;
+  font-family: $FFS;
   color: $textColor;
-  font-size: 14px;
+  @include adaptiv-value(font-size, 16, 12, 1);
 }
 
 .draft-text{
