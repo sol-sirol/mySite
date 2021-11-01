@@ -31,7 +31,7 @@
 body{
   font-family: $FFS;
   color: $textColor;
-  @include adaptiv-value(font-size, 16, 12, 1);
+  font-size: 16px;
 }
 
 .draft-text{
@@ -83,5 +83,9 @@ body{
   border-style: initial;
   border-color: initial;
   border-image: initial;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 // ====
