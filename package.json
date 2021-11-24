@@ -5,7 +5,9 @@
   "main": "index.js",
   "dependencies": {
     "global": "^4.4.0",
-    "gulp-cli": "^2.3.0"
+    "gulp-cli": "^2.3.0",
+    "save-dev": "0.0.1-security",
+    "three": "^0.134.0"
   },
   "devDependencies": {
     "browser-sync": "^2.26.14",

@@ -1,4 +1,5 @@
 @import 'vars';
+@import 'animation';
 @import 'fonts';
 @import 'reset';
 @import 'libs';
@@ -74,7 +75,7 @@ footer{
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 2;
+    z-index: 200;
     background-color: #000;
     transition: all 0.5s;
   }
@@ -114,9 +115,10 @@ footer{
   }         
 }
 .header {
-  position: fixed;
+  position: sticky;
   z-index: 10;
   width: 100%;
+  top: 0;
 
   &__wrapper {
     background-color: #000;
@@ -239,6 +241,92 @@ footer{
 // HEADER* ===============================================================================================================================
 // HEADER* ===============================================================================================================================
 
+// welcome-screen ===============================================================================================================================
+.welcome-screen {
+  width: 100%;
+  height: 100vh; 
+  
+  &__wrapper {
+    position: sticky;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  &__video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    z-index: 1;
+  }
+  
+  &__video {
+    width: 100%;
+  }
+
+  &__cloud-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+  }
+  
+  .canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 501;
+  }
+
+  &__canvas {    
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 50;
+    transform: translate(250px, 100px);
+  }
+  
+}
+.cloud-wrapper {
+
+  &__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 300vw;
+
+    &_ferst {
+      background: url('../images/clouds/fog-1.png') repeat-x;
+      background-size: contain;
+      background-position: center;
+      animation: marquee 60s linear infinite;
+    }
+    
+    &_second {
+      background: url('../images/clouds/fog-1.png') repeat-x;
+      background-size: contain;
+      background-position: center;
+      animation: marquee 30s linear infinite;
+    }
+  }
+}
+
+// welcome-screen ===============================================================================================================================
 
 
 
@@ -279,7 +367,7 @@ footer{
     line-height: 150%;
   }
 }
-@media (min-width: 640.98px) {
+@media (min-width: 720.98px) {
   .hero {
     &__wrapper {
       justify-content: center;
@@ -325,7 +413,7 @@ footer{
     }
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 720px) {
   .hero {
     &__wrapper {
       display: flex;
