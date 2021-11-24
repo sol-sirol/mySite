@@ -51,6 +51,7 @@ function scripts() {
         'app/js/SceneUtils.js',
         'app/js/tween.js',
         'app/js/cubic.js',
+        'app/js/background-canvas.js',
         'app/js/main.js'
     ])
     .pipe(concat("main.min.js"))
