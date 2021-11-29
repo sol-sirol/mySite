@@ -22,15 +22,60 @@
       <div class="menu-wrapper__funny-text">Тут могла быть ваша реклама :)</div>
     </div>
     <div class="wrapper__main-content main-content-wrapper" data-simplebar >
-      <div class="welcome-screen">
-        <div class="welcome-screen__wrapper">
-          <div class="welcome-screen__video-wrapper">
-            <canvas id="canvas-2" class="welcome-screen__video"></canvas>
-          </div>
-          <canvas id="canvas_1" class="welcome-screen__canvas">ОЙ, что-то пошло не так, и ваш браузер не поддерживает тег canvas!</canvas>
+      <div class="header-welcom max-container">
+        <div class="header-welcom__container">
+          <div class="header-welcom__body">
+            <div class="header-welcom__button button-open-welcom">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <nav class="header-welcom__nav nav-header-welcom">
+              <ul class="nav-header-welcom__list">
+                <li><a href="#" class="nav-header-welcom__link">Опыт</a></li>
+                <li><a href="#" class="nav-header-welcom__link">Работы</a></li>
+                <li><a href="#" class="nav-header-welcom__link">Технологии</a></li>
+                <li><a href="#" class="nav-header-welcom__link">Контакты</a></li>
+              </ul>
+            </nav>
+          </div>              
         </div>
-        <div class="canvas-container"></div>      
+        <div class="cube-control unselectable">
+          <div class="cube-control__wrapper">
+            <div class="cube-control__body">
+              <h2 class="cube-control__title">Управление гранями</h2>
+              <ul class="cube-control__list">
+                <li><span class="cube-control__button">q</span></li>
+                <li><span class="cube-control__button">w</span></li>
+                <li><span class="cube-control__button">e</span></li>
+                <li><span class="cube-control__button">a</span></li>
+                <li><span class="cube-control__button">s</span></li>
+                <li><span class="cube-control__button">d</span></li>
+              </ul>
+              <div class="cube-control__reverse">
+                <span class="cube-control__reverse-button">Shift</span>
+                <span class="cube-control__reverse-description">*Удерживайте Shift, чтобы вращать грань в другом направлении</span>
+              </div>
+            </div>
+          </div>
+        </div>   
       </div>
+      <div class="canvas-container"></div>
+      <section class="welcome-screen">
+        <div class="welcome-screen__wrapper">
+          <div class="welcome-screen__fixsed">
+            <div class="welcome-screen__content max-container">
+              <div class="welcome-screen__cube-control"></div>   
+              <div class="welcome-screen__canvas-wrapper">
+                <canvas id="canvas_1" class="welcome-screen__canvas">ОЙ, что-то пошло не так, и ваш браузер не поддерживает тег canvas!</canvas>
+              </div>
+            </div>
+            <div class="welcome-screen__background">
+              <canvas id="canvas-2" class="welcome-screen__background-canvas"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
       <header class="header">
         <div class="header__wrapper">
           <div class="header__container container">

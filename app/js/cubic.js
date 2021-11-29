@@ -1,17 +1,25 @@
 void function main(root = document.body) {
-	const canvas_1 = document.getElementById('canvas_1');
+	let canvas_1 = document.getElementById('canvas_1');
 	const container = document.querySelector('.canvas-container');
-   
+	const cubeControlButton = document.querySelectorAll('.cube-control__button');
+	const cubeControlButtonRevers = document.querySelector('.cube-control__reverse-button');
+
+
 	// Создаём рендерер
 	const renderer = new THREE.WebGLRenderer({canvas: canvas_1, antialias: true, alpha: true});
 	//const renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
 	renderer.setSize(canvas_1.clientWidth, canvas_1.clientHeight);
+
+	// window.addEventListener('resize', () => {
+	// 	canvas_1 = document.getElementById('canvas_1');
+	// 	renderer.setSize(canvas_1.clientWidth, canvas_1.clientHeight);
+	// })
 	// Вставляем канвас в html
 	//root.appendChild(renderer.domElement);
 
 	// Создаём сцену
 	const scene = new THREE.Scene();
-	//scene.background = new THREE.Color(0x204550);
+	// scene.background = new THREE.Color(0x204550);
 	window.scene = scene;
 	// Создаём камеру
 	const camera = new THREE.PerspectiveCamera(60, canvas_1.clientWidth / canvas_1.clientHeight, 1, 10000);
@@ -44,7 +52,7 @@ void function main(root = document.body) {
 
 	void function initializeCube() {
 		// Создаём константу-размер малого кубика
-		const SIZE_OF_PIECE = 50;
+		const SIZE_OF_PIECE = 65;
 		const SIZE_OF_PIECE_WITH_GAPS = SIZE_OF_PIECE * 1.02;
 		// Создаём константы для сторон
 		const FRONT = 'front',
@@ -302,6 +310,59 @@ void function main(root = document.body) {
 				}
 			});
 
+			let shiftDown
+				cubeControlButtonRevers.addEventListener("mousedown", () => {
+					shiftDown = true
+				})
+				cubeControlButtonRevers.addEventListener("mouseup", () => {
+					shiftDown = false
+				})
+			cubeControlButton.forEach((e) => {
+				e.addEventListener("click", () => {
+					if (tween.isPlaying())
+					return;
+					clockwise = shiftDown ? -1 : 1;
+					console.log(clockwise)
+					switch (e.innerHTML) {
+						case "q": // q
+						axis = 'x';
+						filtered = allPieces.filter(({position: {x}}) => x > SIZE_OF_PIECE);
+						filtered.forEach(item => rotatingSide.push(item));
+						tween.start();
+						break;
+						case "a": // a
+						axis = 'x';
+						filtered = allPieces.filter(({position: {x}}) => x < -SIZE_OF_PIECE);
+						filtered.forEach(item => rotatingSide.push(item));
+						tween.start();
+						break;
+					case "w": // w
+						axis = 'y';
+						filtered = allPieces.filter(({position: {y}}) => y > SIZE_OF_PIECE);
+						filtered.forEach(item => rotatingSide.push(item));
+						tween.start();
+						break;
+					case "s": // s
+						axis = 'y';
+						filtered = allPieces.filter(({position: {y}}) => y < -SIZE_OF_PIECE);
+						filtered.forEach(item => rotatingSide.push(item));
+						tween.start();
+						break;
+					case "e": // e
+						axis = 'z';
+						filtered = allPieces.filter(({position: {z}}) => z > SIZE_OF_PIECE);
+						filtered.forEach(item => rotatingSide.push(item));
+						tween.start();
+						break;
+					case "d": // d
+						axis = 'z';
+						filtered = allPieces.filter(({position: {z}}) => z < -SIZE_OF_PIECE);
+						filtered.forEach(item => rotatingSide.push(item));
+						tween.start();
+						break;
+					}
+				});
+			});
 		}();
 	}();
 }();

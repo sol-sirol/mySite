@@ -57,11 +57,11 @@
     }
 
     function reDrawBackground(){
-        grd = ctx.createLinearGradient(-h/2, 0, -h/2, w);
+        grd = ctx.createLinearGradient(h/2, 0, h/2, w);
               
         // Попробуйте добавить цвета с первым параметром от 0 до 1
         grd.addColorStop(0, "#5221E6"); 
-        grd.addColorStop(1, "white");
+        grd.addColorStop(1, "#c1b4e7");
         //grd.addColorStop(1, "rgba(195, 230, 255, 0)"); 
 
         ctx.fillStyle = grd;
