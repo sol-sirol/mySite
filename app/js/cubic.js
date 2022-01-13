@@ -3,6 +3,11 @@ void function main(root = document.body) {
 	const container = document.querySelector('.canvas-container');
 	const cubeControlButton = document.querySelectorAll('.cube-control__button');
 	const cubeControlButtonRevers = document.querySelector('.cube-control__reverse-button');
+	let shiftDown
+
+	cubeControlButtonRevers.addEventListener("click", () => {
+		cubeControlButtonRevers.classList.toggle('reversOn')
+	});
 
 
 	// Создаём рендерер
@@ -268,8 +273,18 @@ void function main(root = document.body) {
 			window.addEventListener('keydown', function handleKeyDown({keyCode, shiftKey}) {
 				if (tween.isPlaying())
 					return;
-				clockwise = shiftKey ? -1 : 1;
-				let filtered;
+
+					if (cubeControlButtonRevers.classList.contains('reversOn')) {
+						shiftDown = true
+					} else {
+						shiftDown = false
+					}
+
+					//clockwise = shiftKey ? -1 : 1;
+					clockwise = (shiftDown || shiftKey) ? -1 : 1;
+
+
+					let filtered;
 				switch (keyCode) {
 					case 81: // q
 						axis = 'x';
@@ -309,18 +324,18 @@ void function main(root = document.body) {
 						break;
 				}
 			});
-
-			let shiftDown
-				cubeControlButtonRevers.addEventListener("mousedown", () => {
-					shiftDown = true
-				})
-				cubeControlButtonRevers.addEventListener("mouseup", () => {
-					shiftDown = false
-				})
+			
 			cubeControlButton.forEach((e) => {
 				e.addEventListener("click", () => {
 					if (tween.isPlaying())
 					return;
+
+					if (cubeControlButtonRevers.classList.contains('reversOn')) {
+						shiftDown = true
+					} else {
+						shiftDown = false
+					}
+					
 					clockwise = shiftDown ? -1 : 1;
 					console.log(clockwise)
 					switch (e.innerHTML) {

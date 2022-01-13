@@ -1,125 +1,271 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.min.css">
-  <noscript>
-    <style>
-      .simplebar-content-wrapper {
-        overflow: auto;
-      }
-    </style>
-  </noscript>
-  <title>Document</title>
-</head>
-<body>
-  <div class="wrapper">
-    <div class="wrapper__menu-wrapper menu-wrapper">
-      <button class="button-clous">Закрыть</button>
-      <a href="http://kamertsel.ml/tulpar/" title="" class="button-clous-link">Перейти</a>
-      <div class="menu-wrapper__funny-text">Тут могла быть ваша реклама :)</div>
-    </div>
-    <div class="wrapper__main-content main-content-wrapper" data-simplebar >
-      <div class="header-welcom max-container">
-        <div class="header-welcom__container">
-          <div class="header-welcom__body">
-            <div class="header-welcom__button button-open-welcom">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <nav class="header-welcom__nav nav-header-welcom">
-              <ul class="nav-header-welcom__list">
-                <li><a href="#" class="nav-header-welcom__link">Опыт</a></li>
-                <li><a href="#" class="nav-header-welcom__link">Работы</a></li>
-                <li><a href="#" class="nav-header-welcom__link">Технологии</a></li>
-                <li><a href="#" class="nav-header-welcom__link">Контакты</a></li>
-              </ul>
-            </nav>
-          </div>              
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <noscript>
+      <style>
+        .simplebar-content-wrapper {
+          overflow: auto;
+        }
+      </style>
+    </noscript>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="wrapper__menu-wrapper menu-wrapper">
+        <button class="button-clous">Закрыть</button>
+        <a href="http://kamertsel.ml/tulpar/" title="" class="button-clous-link"
+          >Перейти</a
+        >
+        <div class="menu-wrapper__funny-text">
+          Тут могла быть ваша реклама :)
         </div>
-        <div class="cube-control unselectable">
-          <div class="cube-control__wrapper">
-            <div class="cube-control__body">
-              <h2 class="cube-control__title">Управление гранями</h2>
-              <ul class="cube-control__list">
-                <li><span class="cube-control__button">q</span></li>
-                <li><span class="cube-control__button">w</span></li>
-                <li><span class="cube-control__button">e</span></li>
-                <li><span class="cube-control__button">a</span></li>
-                <li><span class="cube-control__button">s</span></li>
-                <li><span class="cube-control__button">d</span></li>
-              </ul>
-              <div class="cube-control__reverse">
-                <span class="cube-control__reverse-button">Shift</span>
-                <span class="cube-control__reverse-description">*Удерживайте Shift, чтобы вращать грань в другом направлении</span>
-              </div>
-            </div>
-          </div>
-        </div>   
       </div>
-      <div class="canvas-container"></div>
-      <section class="welcome-screen">
-        <div class="welcome-screen__wrapper">
-          <div class="welcome-screen__fixsed">
-            <div class="welcome-screen__content max-container">
-              <div class="welcome-screen__cube-control"></div>   
-              <div class="welcome-screen__canvas-wrapper">
-                <canvas id="canvas_1" class="welcome-screen__canvas">ОЙ, что-то пошло не так, и ваш браузер не поддерживает тег canvas!</canvas>
-              </div>
-            </div>
-            <div class="welcome-screen__background">
-              <canvas id="canvas-2" class="welcome-screen__background-canvas"></canvas>
-            </div>
-          </div>
-        </div>
-      </section>
-      <header class="header">
-        <div class="header__wrapper">
-          <div class="header__container container">
-            <div class="header__body">
-              <div class="header__button button-open">
+      <div class="wrapper__main-content main-content-wrapper" data-simplebar>
+        <div class="header-welcom max-container">
+          <div class="header-welcom__container">
+            <div class="header-welcom__body">
+              <div class="header-welcom__button button-open-welcom">
                 <span></span>
                 <span></span>
                 <span></span>
               </div>
-              <nav class="header__nav nav-header">
-                <ul class="nav-header__list">
-                  <li><a href="#" class="nav-header__link">Опыт</a></li>
-                  <li><a href="#" class="nav-header__link">Работы</a></li>
-                  <li><a href="#" class="nav-header__link">Технологии</a></li>
-                  <li><a href="#" class="nav-header__link">Контакты</a></li>
+              <nav class="header-welcom__nav nav-header-welcom">
+                <ul class="nav-header-welcom__list">
+                  <li><a href="#" class="nav-header-welcom__link">Опыт</a></li>
+                  <li>
+                    <a href="#" class="nav-header-welcom__link">Работы</a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav-header-welcom__link">Технологии</a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav-header-welcom__link">Контакты</a>
+                  </li>
                 </ul>
               </nav>
             </div>
           </div>
-        </div>
-      </header>
-      <main class="main">
-        <section class="hero">
-          <div class="hero__container max-container">
-            <div class="hero__wrapper">
-              <div class="hero__body-img hero-body-img">
-                <img class="hero-body-img__img" src="./images/main-foto.jpg" alt="Это я - Артур Камерцель">
-              </div>
-              <div class="hero__body-text hero-body-text">
-                <div class="hero-body-text__text">
-                  <h1 class="hero-body-text__title">Камерцель Артур. <span class="nowrap"> HTML верстальщик</span> <span class="nowrap"> из России.</span></h1>
-                  <h2 class="hero-body-text__sub-title">Я, наверное, самый увлеченный верстальщик, с которым вы можите поработать. Если у вас есть проект, требующий отличных навыков то, я тот, кто вам нужен.</h2>
+          <div class="cube-control unselectable">
+            <div class="cube-control__wrapper">
+              <div class="cube-control__body">
+                <h2 class="cube-control__title">Управление гранями</h2>
+                <ul class="cube-control__list">
+                  <li><span class="cube-control__button">q</span></li>
+                  <li><span class="cube-control__button">w</span></li>
+                  <li><span class="cube-control__button">e</span></li>
+                  <li><span class="cube-control__button">a</span></li>
+                  <li><span class="cube-control__button">s</span></li>
+                  <li><span class="cube-control__button">d</span></li>
+                </ul>
+                <div class="cube-control__reverse">
+                  <span class="cube-control__reverse-button">Shift</span>
+                  <span class="cube-control__reverse-description"
+                    >*Удерживайте Shift, чтобы вращать грань в другом
+                    направлении</span
+                  >
                 </div>
               </div>
             </div>
           </div>
+        </div>
+        <div class="canvas-container"></div>
+        <section class="welcome-screen">
+          <div class="welcome-screen__wrapper">
+            <div class="welcome-screen__fixsed">
+              <div class="welcome-screen__content max-container">
+                <div class="welcome-screen__cube-control"></div>
+                <div class="welcome-screen__canvas-wrapper">
+                  <canvas id="canvas_1" class="welcome-screen__canvas"
+                    >ОЙ, что-то пошло не так, и ваш браузер не поддерживает тег
+                    canvas!</canvas
+                  >
+                </div>
+              </div>
+              <div class="welcome-screen__background">
+                <canvas id="canvas-2" class="welcome-screen__background-canvas"
+                  >ОЙ, что-то пошло не так, и ваш браузер не поддерживает тег
+                  canvas!</canvas
+                >
+              </div>
+            </div>
+          </div>
         </section>
-        
-      </main>
-      <footer class="footer">
-        
-      </footer>
+        <header class="header">
+          <div class="header__wrapper">
+            <div class="header__container container">
+              <div class="header__body">
+                <div class="header__button button-open">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <nav class="header__nav nav-header">
+                  <ul class="nav-header__list">
+                    <li><a href="#" class="nav-header__link">Опыт</a></li>
+                    <li><a href="#" class="nav-header__link">Работы</a></li>
+                    <li><a href="#" class="nav-header__link">Технологии</a></li>
+                    <li><a href="#" class="nav-header__link">Контакты</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </header>
+        <main class="main">
+          <section class="hero">
+            <div class="hero__container max-container">
+              <div class="hero__wrapper">
+                <div class="hero__body-img hero-body-img">
+                  <img
+                    class="hero-body-img__img"
+                    src="./images/main-foto.jpg"
+                    alt="Это я - Артур Камерцель"
+                  />
+                </div>
+                <div class="hero__body-text hero-body-text">
+                  <div class="hero-body-text__text">
+                    <h1 class="hero-body-text__title">
+                      Камерцель Артур.
+                      <span class="nowrap"> HTML верстальщик</span>
+                      <span class="nowrap"> из России.</span>
+                    </h1>
+                    <h2 class="hero-body-text__sub-title">
+                      Я, наверное, самый увлеченный верстальщик, с которым вы
+                      можите поработать. Если у вас есть проект, требующий
+                      отличных навыков то, я тот, кто вам нужен.
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="technologies">
+            <div class="technologies__wrapper">
+              <div class="technologies__container container">
+                <div class="technologies__body">
+                  <h3 class="technologies__sub-title">WORK EXPERIENCE</h3>
+                  <h2 class="technologies__title">Используемые технологии</h2>
+                  <div class="technologies__box box-technologies">
+                    <div class="box-technologies__item">
+                      <div class="box-technologies__number">01</div>
+                      <div class="box-technologies__title">
+                        <span class="box-technologies__title_gren">Google</span
+                        >, Interaction Designer
+                      </div>
+                      <div class="box-technologies__text">
+                        I currently am the lead designer on the interaction
+                        design team for Google Play.
+                      </div>
+                    </div>
+                    <div class="box-technologies__item">
+                      <div class="box-technologies__number">02</div>
+                      <div class="box-technologies__title">
+                        <span class="box-technologies__title_blue">Google</span
+                        >, Interaction Designer
+                      </div>
+                      <div class="box-technologies__text">
+                        I currently am the lead designer on the interaction
+                        design team for Google Play.
+                      </div>
+                    </div>
+                    <div class="box-technologies__item">
+                      <div class="box-technologies__number">03</div>
+                      <div class="box-technologies__title">
+                        <span class="box-technologies__title_pink">Google</span
+                        >, Interaction Designer
+                      </div>
+                      <div class="box-technologies__text">
+                        I currently am the lead designer on the interaction
+                        design team for Google Play.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="philosophy">
+            <div class="philosophy__wrapper">
+              <div class="philosophy__container">
+                <h2 class="visuallyhidden">Моя философия</h2>
+                <div class="philosophy__body">
+                  <div class="philosophy__canvas-wrapper">
+                    <canvas id="canvas-3" class="philosophy__canvas"
+                      >ОЙ, что-то пошло не так, и ваш браузер не поддерживает
+                      тег canvas!</canvas
+                    >
+                  </div>
+                  <div class="philosophy__image-wrapper">
+                    <div class="philosophy__image"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="skillset">
+            <div class="skillset__wrapper">
+              <div class="skillset__container container">
+                <div class="skillset__body">
+                  <div class="skillset__title-box">
+                    <h2 class="skillset__title">Навыки</h2>
+                    <div class="skillset__text">
+                      Обладая навыками в более чем 4 различных областях дизайна,
+                      я идеальный человек, которого можно нанять, когда дело
+                      доходит до полноценного проекта. Какими бы ни были ваши
+                      потребности, я могу принять любой вызов.
+                    </div>
+                  </div>
+                  <div class="skillset__skills-box box-skills">
+                    <div class="box-skills__item">
+                      <div class="box-skills__icon box-skills__icon_html"></div>
+                      <h3 class="box-skills__title">Product Design</h3>
+                      <div class="box-skills__text">
+                        Working at Facebook has taught me a lot about how to
+                        understand users, solve problems and build great
+                        products.
+                      </div>
+                    </div>
+                    <div class="box-skills__item">
+                      <div class="box-skills__icon box-skills__icon_css"></div>
+                      <h3 class="box-skills__title">Motion Design</h3>
+                      <div class="box-skills__text">
+                        I started my design journey with motion design in my
+                        college days. Motion is something that really fascinates
+                        me because of the flexibility of story telling.
+                      </div>
+                    </div>
+                    <div class="box-skills__item">
+                      <div class="box-skills__icon box-skills__icon_js"></div>
+                      <h3 class="box-skills__title">Visual Design</h3>
+                      <div class="box-skills__text">
+                        My experience at dribbble has helped me learn to develop
+                        the eye for design. Colors, typography, layout and the
+                        whole package.
+                      </div>
+                    </div>
+                    <div class="box-skills__item">
+                      <div class="box-skills__icon box-skills__icon_moo"></div>
+                      <h3 class="box-skills__title">Photography</h3>
+                      <div class="box-skills__text">
+                        Clicking pictures really brings out the creative in me.
+                        Phtography really makes you look and percieve things in
+                        a different way.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <footer class="footer"></footer>
+      </div>
     </div>
-  </div>
-  <script src="js/main.min.js"></script>
-</body>
+    <script src="js/main.min.js"></script>
+  </body>
 </html>

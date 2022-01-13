@@ -1,15 +1,15 @@
-@import 'vars';
-@import 'animation';
-@import 'fonts';
-@import 'reset';
-@import 'libs';
-@import 'global';
+@import "vars";
+@import "animation";
+@import "fonts";
+@import "reset";
+@import "libs";
+@import "global";
 
 // ПОДКЛЮЧЕНИЕ ШРИШТОВ =======================================================================================
 // &display=swap
 // &subset=cyrillic-ext ДЛЯ РУ
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap&subset=cyrillic-ext');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;900&family=Source+Sans+Pro:wght@400;600;700&display=swap&subset=cyrillic-ext");
 
 // ПОДКЛЮЧЕНИЕ ШРИШТОВ =======================================================================================
 
@@ -20,35 +20,39 @@
   $add: $start - $min;
   @if $type == 1 {
     // Только если меньше контейнера
-    #{$property}:  $start + px;
+    #{$property}: $start + px;
     @media (max-width: #{$maxWidthContainer}) {
-      #{$property}: calc(#{$min + px} + #{$add} * ((100vw - 320px) / #{$maxWidthContainer-NoPx - 320}))
+      #{$property}: calc(
+        #{$min + px} + #{$add} *
+          ((100vw - 320px) / #{$maxWidthContainer-NoPx - 320})
+      );
     }
   } @else if $type == 2 {
     // Только если больше контейнера
-    #{$property}:  $start + px;
+    #{$property}: $start + px;
     @media (min-width: #{$maxWidthContainer}) {
-      #{$property}: calc(#{$min + px} + #{$add} * ((100vw - 320px) / #{$maxWidth-NoPx - 320}))
+      #{$property}: calc(
+        #{$min + px} + #{$add} * ((100vw - 320px) / #{$maxWidth-NoPx - 320})
+      );
     }
   } @else {
     // Только если больше контейнера
-    #{$property}:  calc(#{$min + px} + #{$add} * ((100vw - 320px) / #{$maxWidth-NoPx - 320}))
+    #{$property}: calc(
+      #{$min + px} + #{$add} * ((100vw - 320px) / #{$maxWidth-NoPx - 320})
+    );
   }
-  
 }
 // АДАПТИВНОЕ СВОЙСТВО =======================================================================================
 
-
 // MIXINI =======================================================================================
 
-
 // FOOTER К НИЗУ =====================================================
-body{
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-footer{
+footer {
   margin-top: auto;
 }
 // FOOTER К НИЗУ =====================================================
@@ -66,7 +70,7 @@ footer{
     width: 100vw;
     height: 100vh;
     z-index: 1;
-    background-color: #5221E690;
+    background-color: #5221e690;
   }
 
   &__main-content {
@@ -94,7 +98,6 @@ footer{
   }
 }
 .menu-wrapper {
-
   &__funny-text {
     position: absolute;
     width: 100%;
@@ -109,10 +112,10 @@ footer{
 // HEADER ===============================================================================================================================
 // HEADER ===============================================================================================================================
 @media (any-hover: hover) {
-  .wrapper__main-content._active .header__button span{
+  .wrapper__main-content._active .header__button span {
     width: 0px;
     transition: all 0.2s;
-  }         
+  }
 }
 .header {
   position: sticky;
@@ -146,7 +149,7 @@ footer{
     }
     @media (any-hover: hover) {
       span::before {
-        content: '';
+        content: "";
         display: block;
         width: 0px;
         height: 2px;
@@ -164,14 +167,14 @@ footer{
     }
     span:not(:last-child) {
       @include adaptiv-value(margin-bottom, 8, 6, 1);
-    }      
+    }
   }
   @media (any-hover: hover) {
     &__button:hover {
       span::before {
         @include adaptiv-value(width, 35, 25, 1);
       }
-    }        
+    }
   }
 
   &__nav {
@@ -179,7 +182,6 @@ footer{
 }
 
 .nav-header {
-
   &__list {
     display: flex;
     align-items: center;
@@ -192,7 +194,7 @@ footer{
       background-color: $mainColor;
     }
     li::before {
-      content: '';
+      content: "";
       position: absolute;
       z-index: 2;
       top: 0;
@@ -204,7 +206,7 @@ footer{
       transition: all 0.3s ease 0s;
     }
     li::after {
-      content: '';
+      content: "";
       position: absolute;
       z-index: 2;
       top: 0;
@@ -215,14 +217,14 @@ footer{
       background-color: #000;
       transition: all 0.3s ease 0s;
     }
-    li:hover::before{
+    li:hover::before {
       transform: translateX(-100%);
     }
-    li:hover::after{
+    li:hover::after {
       transform: translateX(100%);
     }
   }
-  
+
   &__link {
     position: relative;
     display: block;
@@ -251,7 +253,7 @@ footer{
 
   &__wrapper {
   }
-  
+
   &__fixsed {
     position: fixed;
     top: 0;
@@ -274,7 +276,6 @@ footer{
     @include adaptiv-value(flex-basis, 400, 0, 1);
   }
 
-  
   &__canvas-wrapper {
     max-height: 100%;
     @include adaptiv-value(height, 650, 280, 1);
@@ -287,14 +288,13 @@ footer{
       align-items: stretch;
       justify-content: flex-end;
     }
-  
-    
+
     &__canvas-wrapper {
       //height: auto;
       flex: 1 1 auto;
     }
   }
-  
+
   &__canvas {
     width: 100%;
     height: 100%;
@@ -327,6 +327,7 @@ footer{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 15px;
     border: 2px solid #fff;
     border-radius: 15px;
     transition: all 0.3s;
@@ -348,7 +349,7 @@ footer{
     }
     @media (any-hover: hover) {
       span::before {
-        content: '';
+        content: "";
         display: block;
         width: 0px;
         height: 2px;
@@ -367,23 +368,20 @@ footer{
     }
     span:not(:last-child) {
       @include adaptiv-value(margin-bottom, 8, 6, 1);
-    }      
+    }
   }
   @media (any-hover: hover) {
     &__button:hover {
       span::before {
         @include adaptiv-value(width, 35, 25, 1);
       }
-    }        
+    }
   }
-
-
 
   &__nav {
   }
 }
 .nav-header-welcom {
-
   &__list {
     display: flex;
     align-items: center;
@@ -409,14 +407,13 @@ footer{
   z-index: 4;
   top: 150;
   left: 0;
-  
+
   &__wrapper {
     padding: 10px;
     @include adaptiv-value(width, 400, 200, 1);
   }
   @media (max-width: 870px) {
     width: 100%;
-
 
     &__wrapper {
       width: 100%;
@@ -432,7 +429,7 @@ footer{
       box-shadow: 0px 0px 5px #fff;
     }
   }
-  
+
   &__title {
     @include adaptiv-value(font-size, 28, 22, 1);
     @include adaptiv-value(padding-bottom, 15, 5, 1);
@@ -442,7 +439,7 @@ footer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    
+
     li {
       display: flex;
       align-items: center;
@@ -451,7 +448,6 @@ footer{
     }
   }
 
-  
   &__button {
     display: flex;
     align-items: center;
@@ -496,7 +492,12 @@ footer{
       box-shadow: 0px 0px 5px #fff;
     }
   }
-  
+
+  &__reverse-button.reversOn {
+    background-color: #fff;
+    color: #333;
+  }
+
   &__reverse-description {
     padding: 10px;
     @include adaptiv-value(font-size, 20, 18, 1);
@@ -507,7 +508,7 @@ footer{
       text-align: center;
     }
   }
-  
+
   @media (max-width: 870px) {
     &__list {
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -520,7 +521,7 @@ footer{
   }
   @media (max-width: 380px) {
     &__list {
-      grid-template-columns: 1fr 1fr 1fr!important;
+      grid-template-columns: 1fr 1fr 1fr !important;
       grid-template-rows: 1fr 1fr;
     }
 
@@ -541,10 +542,7 @@ footer{
   z-index: 4;
 }
 
-
 // welcome-screen ===============================================================================================================================
-
-
 
 // MAIN =================================================================================================================================
 // MAIN =================================================================================================================================
@@ -561,13 +559,11 @@ footer{
   }
 }
 .hero-body-img {
-
   &__img {
     z-index: 4;
   }
 }
 .hero-body-text {
-
   &__text {
     z-index: 5;
   }
@@ -583,18 +579,18 @@ footer{
     line-height: 150%;
   }
 }
-@media (min-width: 720.98px) {
+@media (min-width: 760.98px) {
   .hero {
     &__wrapper {
       justify-content: center;
     }
-  
+
     &__body-img {
       position: relative;
       padding: 125px 0;
       width: 37.5vw;
     }
-  
+
     &__body-text {
       position: relative;
       padding: 125px 0;
@@ -618,45 +614,43 @@ footer{
       @include adaptiv-value(padding, 40, 10, 1);
       transform: translateY(-50%);
     }
-  
+
     &__title {
       @include adaptiv-value(padding-bottom, 30, 0, 1);
       @include adaptiv-value(font-size, 76, 5, 1);
     }
-  
+
     &__sub-title {
       @include adaptiv-value(font-size, 20, 8, 1);
     }
   }
 }
-@media (max-width: 870px) {
+@media (max-width: 760px) {
   .hero {
     &__wrapper {
       display: flex;
       flex-direction: column;
     }
-  
+
     &__body-img {
-      margin-top: 30px; 
+      margin-top: 30px;
     }
-  
+
     &__body-text {
       padding: 50px 20px;
       background-color: $grey;
     }
   }
   .hero-body-img {
-  
     &__img {
       z-index: 4;
     }
   }
   .hero-body-text {
-  
     &__text {
       z-index: 5;
     }
-  
+
     &__title {
       font-family: $FFR;
       font-weight: 700;
@@ -664,7 +658,7 @@ footer{
       @include adaptiv-value(font-size, 88, 26, 1);
       line-height: 120%;
     }
-  
+
     &__sub-title {
       display: block;
       max-width: 760px;
@@ -673,11 +667,290 @@ footer{
   }
 }
 
+.technologies {
+  &__wrapper {
+    padding: 120px 0 90px 0;
+    @include adaptiv-value(padding-top, 120, 80, 1);
+    @include adaptiv-value(padding-bottom, 90, 80, 1);
+  }
+
+  &__container {
+  }
+
+  &__body {
+  }
+
+  &__sub-title {
+    font-family: $FFR;
+    font-size: 16px;
+    line-height: 24px;
+    color: $textColorGrey;
+    text-transform: uppercase;
+    @include adaptiv-value(padding-bottom, 43, 20, 1);
+  }
+
+  &__title {
+    font-family: $FFR;
+    @include adaptiv-value(font-size, 55, 34, 1);
+    @include adaptiv-value(line-height, 66, 42, 1);
+    @include adaptiv-value(padding-bottom, 43, 30, 1);
+    font-weight: 700;
+  }
+
+  &__box {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -12px;
+  }
+}
+.box-technologies {
+  &__item {
+    flex: 0 1 368px;
+    padding: 0 12px;
+    padding-bottom: 30px;
+  }
+
+  &__number {
+    font-family: $FFS;
+    @include adaptiv-value(font-size, 117, 75, 1);
+    @include adaptiv-value(line-height, 160, 80, 1);
+    color: $textColorGrey;
+  }
+
+  &__title {
+    font-family: $FFR;
+    @include adaptiv-value(font-size, 24, 20, 1);
+    @include adaptiv-value(line-height, 28, 24, 1);
+    @include adaptiv-value(padding-bottom, 16, 8, 1);
+    font-weight: 700;
+
+    &_gren {
+      color: #3cc74e;
+    }
+
+    &_blue {
+      color: #609bff;
+    }
+
+    &_pink {
+      color: #e95d90;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+@media (max-width: 456px) {
+  .technologies {
+    &__title {
+      text-align: center;
+    }
+    &__box {
+      justify-content: center;
+    }
+  }
+
+  .box-technologies {
+    &__number {
+      text-align: center;
+      padding-bottom: 8px;
+    }
+
+    &__title {
+      text-align: center;
+    }
+
+    &__text {
+      text-align: center;
+    }
+  }
+}
+.philosophy {
+  &__wrapper {
+    background-color: #fff3e4;
+  }
+
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  &__canvas-wrapper {
+    flex: 1 1 700px;
+  }
+
+  &__canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image-wrapper {
+    flex: 1 1 500px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    background-image: url(../images/philosophy-img.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  @media (max-width: 760px) {
+    &__body {
+      flex-direction: column;
+    }
+
+    &__canvas-wrapper {
+      flex: 1 1 400px;
+    }
+
+    &__image-wrapper {
+      flex: 1 1 300px;
+    }
+
+    &__image {
+      width: 100%;
+      height: 100%;
+      min-height: 200px;
+    }
+  }
+}
+
+.skillset {
+  &__wrapper {
+    @include adaptiv-value(padding-top, 120, 80, 1);
+    @include adaptiv-value(padding-bottom, 120, 80, 1);
+  }
+
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__title-box {
+    flex: 0 1 auto;
+    padding-right: 72px;
+  }
+
+  &__title {
+    font-family: $FFR;
+    font-weight: 700;
+    @include adaptiv-value(font-size, 55, 42, 1);
+    @include adaptiv-value(line-height, 66, 42, 1);
+    padding-bottom: 24px;
+  }
+
+  &__text {
+    @include adaptiv-value(font-size, 18, 16, 1);
+    line-height: 27px;
+    color: $textColorGrey;
+  }
+
+  &__skills-box {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -12px;
+  }
+}
+.box-skills {
+  &__item {
+    flex: 1 0 290px;
+    padding: 24px 12px;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &_html {
+      background-image: url(../images/icons/html.svg);
+    }
+    &_css {
+      background-image: url(../images/icons/css.svg);
+    }
+    &_js {
+      background-image: url(../images/icons/js.svg);
+    }
+    &_moo {
+      background-image: url(../images/icons/moo.svg);
+    }
+  }
+
+  &__title {
+    letter-spacing: 1.1px;
+    font-family: $FFR;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    padding-top: 24px;
+    padding-bottom: 12px;
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 27px;
+    color: $textColorGrey;
+  }
+}
+@media (max-width: 640px) {
+  .skillset {
+    &__body {
+      flex-direction: column;
+    }
+    &__title-box {
+      padding: 0;
+    }
+  }
+}
+@media (max-width: 456px) {
+  .skillset {
+    &__title {
+      text-align: center;
+    }
+    &__text {
+      text-align: center;
+      padding-bottom: 25px;
+    }
+  }
+  .box-skills {
+    &__icon {
+      margin: 0 auto;
+    }
+    &__title {
+      text-align: center;
+    }
+    &__text {
+      text-align: center;
+    }
+  }
+}
+
 // MAIN* =================================================================================================================================
 // MAIN* =================================================================================================================================
-
-
-
 
 // FOOTER ===============================================================================================================================
 // FOOTER ===============================================================================================================================
@@ -685,20 +958,4 @@ footer{
 // FOOTER* ===============================================================================================================================
 // FOOTER* ===============================================================================================================================
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@import 'media'
+@import "media";
