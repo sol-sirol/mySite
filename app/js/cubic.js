@@ -337,7 +337,6 @@ void function main(root = document.body) {
 					}
 					
 					clockwise = shiftDown ? -1 : 1;
-					console.log(clockwise)
 					switch (e.innerHTML) {
 						case "q": // q
 						axis = 'x';

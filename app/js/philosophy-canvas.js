@@ -8,8 +8,6 @@ class Mouse {
 
       this.x = e.clientX - rect.left;
       this.y = e.clientY - rect.top;
-
-      console.log(rect.top);
     };
     // canvas.touchmove = (e) => {
     //   this.x = e.clientX - rect.left;
@@ -205,7 +203,6 @@ function render() {
   // drawLetters();
   mouse.setPos(pos.x, pos.y);
   mouse.draw(ctx);
-  console.log(pos);
 }
 
 render();
