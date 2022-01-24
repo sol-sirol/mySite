@@ -1055,8 +1055,8 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 600px;
+    height: 600px;
     z-index: 1;
   }
 }
@@ -1073,6 +1073,18 @@ footer {
   transition: all 0.3s;
   perspective: 1000px;
   transform-style: preserve-3d;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $mainColor;
+    transform: translateZ(-350px);
+    filter: blur(175px);
+  }
 }
 
 .site-portfolio {
@@ -1107,7 +1119,8 @@ footer {
     top: 320px;
     left: 25px;
     width: 400px;
-    padding: 15px 10px 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     pointer-events: none;
     background-color: $grey;
     transform: translateZ(-20px);
@@ -1121,10 +1134,12 @@ footer {
     // position: absolute;
     // top: 0;
     // left: 0;
+    padding-left: 30px;
+    padding-right: 30px;
     padding-bottom: 8px;
-    font-size: 22px;
+    font-size: 18px;
     line-height: 130%;
-    transform: translateZ(10px);
+    transform: translateZ(30px);
     pointer-events: none;
   }
 
@@ -1133,10 +1148,12 @@ footer {
     // top: 45px;
     // left: 0;
     display: block;
-    font-size: 16px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 14px;
     line-height: 150%;
     color: $textColorGrey;
-    transform: translateZ(5px);
+    transform: translateZ(20px);
     pointer-events: none;
   }
 }

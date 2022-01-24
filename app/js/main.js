@@ -25,6 +25,20 @@ const cards = document.querySelectorAll(".paralacs-object");
 
 for (let i = 0; i < cards.length; i++) {
   const element = cards[i];
+
+  element.addEventListener("mouseover", (event) => {
+    const halfHeidht = element.offsetHeight / 2;
+    const halfWidth = element.offsetWidth / 2;
+
+    const card = element.querySelector(".paralacs-object__content");
+
+    card.style.transform =
+      "rotateX(" +
+      -(event.offsetY - halfHeidht) / 6 +
+      "deg) rotateY(" +
+      (event.offsetX - halfWidth) / 6 +
+      "deg)";
+  });
   element.addEventListener("mousemove", (event) => {
     const halfHeidht = element.offsetHeight / 2;
     const halfWidth = element.offsetWidth / 2;
@@ -33,9 +47,9 @@ for (let i = 0; i < cards.length; i++) {
 
     card.style.transform =
       "rotateX(" +
-      -(event.offsetY - halfHeidht) / 4 +
+      -(event.offsetY - halfHeidht) / 6 +
       "deg) rotateY(" +
-      (event.offsetX - halfWidth) / 4 +
+      (event.offsetX - halfWidth) / 6 +
       "deg)";
   });
   element.addEventListener("mouseout", () => {

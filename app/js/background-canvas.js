@@ -13,7 +13,7 @@
         simplebarScrollbar.style.transform.replace(/\D+/g, "")
       );
 
-      if (String(num).substring(2) > 2000) {
+      if (String(num).substring(2) > 1500) {
         doAnim = false;
       } else doAnim = true;
     };
@@ -112,7 +112,7 @@
     //     }
     // }
 
-    ctx.fillStyle = "rgba(99, 0, 209, 0.26)";
+    ctx.fillStyle = "rgb(0, 0, 0)";
     ctx.fillRect(0, 0, w, h);
 
     // let img = new Image();

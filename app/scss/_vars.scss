@@ -1,10 +1,9 @@
 // ПЕРЕМЕННЫЕ ШИРИН ===================================
 $minWidth: 280px;
-$maxWidth: 1440px;  /// вопрос по адаптивному свойству
+$maxWidth: 1440px; /// вопрос по адаптивному свойству
 $maxWidthContainer: 1296px;
 $maxWidth-NoPx: 1440;
 $maxWidthContainer-NoPx: 1296;
-
 
 $md1: $maxWidthContainer-NoPx + 12;
 $md2: 991.98;
@@ -12,24 +11,23 @@ $md3: 767.98;
 $md4: 479.98;
 // ПЕРЕМЕННЫЕ ШИРИН ===================================
 
-
 // ПЕРЕМЕННЫЕ ЦВЕТА ТЕКСТА ===================================
 
 $textColor: #fff;
-$textColorGrey: #8491A0;
-$mainColor: #5221E6; // aaD000
+$textColorGrey: #8491a0;
+$mainColor: #5221e6; // aaD000
 $grey: #181823;
+
+$mainGren: #3cc74e;
+$mainPink: #e95d90;
 
 // ПЕРЕМЕННЫЕ ЦВЕТА ТЕКСТА ===================================
 
+// ПЕРЕМЕННЫЕ СЕМЕЙСТВО ШРИФТОВ ===================================
+$FFR: "Raleway", sans-serif;
+$FFS: "Source Sans Pro", sans-serif;
 
 // ПЕРЕМЕННЫЕ СЕМЕЙСТВО ШРИФТОВ ===================================
-$FFR: 'Raleway', sans-serif;
-$FFS: 'Source Sans Pro', sans-serif;
-
-
-// ПЕРЕМЕННЫЕ СЕМЕЙСТВО ШРИФТОВ ===================================
-
 
 // MIXINS =======================================================================================
 // MIXINS =======================================================================================
@@ -39,19 +37,26 @@ $FFS: 'Source Sans Pro', sans-serif;
   $add: $start - $min;
   @if $type == 1 {
     // Только если меньше контейнера
-    #{$property}:  $start + px;
+    #{$property}: $start + px;
     @media (max-width: #{$maxWidthContainer}) {
-      #{$property}: calc(#{$min + px} + #{$add} * ((100vw - 280px) / #{$maxWidthContainer-NoPx - 320}))
+      #{$property}: calc(
+        #{$min + px} + #{$add} *
+          ((100vw - 280px) / #{$maxWidthContainer-NoPx - 320})
+      );
     }
   } @else if $type == 2 {
     // Только если больше контейнера
-    #{$property}:  $start + px;
+    #{$property}: $start + px;
     @media (min-width: #{$maxWidthContainer}) {
-      #{$property}: calc(#{$min + px} + #{$add} * ((100vw - 280px) / #{$maxWidth-NoPx - 320}))
+      #{$property}: calc(
+        #{$min + px} + #{$add} * ((100vw - 280px) / #{$maxWidth-NoPx - 320})
+      );
     }
   } @else {
     // Только если больше контейнера
-    #{$property}:  calc(#{$min + px} + #{$add} * ((100vw - 280px) / #{$maxWidth-NoPx - 320}))
+    #{$property}: calc(
+      #{$min + px} + #{$add} * ((100vw - 280px) / #{$maxWidth-NoPx - 320})
+    );
   }
 }
 // АДАПТИВНОЕ СВОЙСТВО =======================================================================================
