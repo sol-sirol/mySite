@@ -692,7 +692,7 @@ footer {
   &__title {
     font-family: $FFR;
     @include adaptiv-value(font-size, 55, 34, 1);
-    @include adaptiv-value(line-height, 66, 42, 1);
+    line-height: 120%;
     @include adaptiv-value(padding-bottom, 43, 30, 1);
     font-weight: 700;
   }
@@ -888,8 +888,8 @@ footer {
   &__title {
     font-family: $FFR;
     font-weight: 700;
-    @include adaptiv-value(font-size, 55, 42, 1);
-    @include adaptiv-value(line-height, 66, 42, 1);
+    @include adaptiv-value(font-size, 55, 34, 1);
+    line-height: 120%;
     padding-bottom: 24px;
   }
 
@@ -1022,9 +1022,11 @@ footer {
   }
 
   &__title-bottom {
+    //font-family: $FFR;
     @include adaptiv-value(padding-bottom, 80, 20, 1);
-    @include adaptiv-value(font-size, 55, 18, 1);
-    @include adaptiv-value(line-height, 66, 28, 1);
+    @include adaptiv-value(font-size, 55, 34, 1);
+    line-height: 120%;
+    //font-weight: 700;
   }
 
   &__site {
@@ -1057,6 +1059,8 @@ footer {
     left: 0;
     width: 600px;
     height: 600px;
+    // @include adaptiv-value(width, 600, 280, 1);
+    // @include adaptiv-value(height, 600, 280, 1);
     z-index: 1;
   }
 }
@@ -1070,6 +1074,7 @@ footer {
 .portfolio__site .paralacs-object__content {
   position: relative;
   min-height: 600px;
+  // @include adaptiv-value(min-height, 600, 280, 1);
   transition: all 0.3s;
   perspective: 1000px;
   transform-style: preserve-3d;
@@ -1090,7 +1095,7 @@ footer {
 .site-portfolio {
   &__welcome-screen {
     width: 78%;
-    height: 270px; /*  height: 25%; */
+    height: 270px; /*  height: 45%; */
     position: absolute;
     top: 20px;
     left: 20px;
@@ -1155,6 +1160,123 @@ footer {
     color: $textColorGrey;
     transform: translateZ(20px);
     pointer-events: none;
+  }
+}
+
+.connection {
+  &__wrapper {
+    padding-bottom: 100px;
+  }
+
+  &__container {
+    max-width: 1106px;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+  &__body {
+  }
+
+  &__title {
+    @include adaptiv-value(font-size, 55, 30, 1);
+    @include adaptiv-value(padding-top, 30, 20, 1);
+    @include adaptiv-value(padding-bottom, 60, 30, 1);
+    line-height: 120%;
+  }
+
+  &__image {
+    margin: 0 auto;
+    @include adaptiv-value(padding-bottom, 80, 30, 1);
+  }
+
+  &__box {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__description {
+    flex: 1 1 50%;
+  }
+
+  &__description-title {
+    // @include adaptiv-value(padding-top, 30, 20, 1);
+    // @include adaptiv-value(padding-bottom, 60, 30, 1);
+    @include adaptiv-value(padding-bottom, 24, 8, 1);
+    @include adaptiv-value(font-size, 55, 30, 1);
+    line-height: 120%;
+  }
+
+  &__text {
+    @include adaptiv-value(font-size, 18, 16, 1);
+    line-height: 150%;
+    color: #8491a0;
+    padding-right: 25px;
+  }
+
+  &__form {
+    flex: 1 0 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    //padding-top: 150px;
+  }
+}
+.form-connection {
+  &__label {
+    @include adaptiv-value(font-size, 16, 14, 1);
+    line-height: 150%;
+    margin-bottom: 8px;
+  }
+
+  &__input {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 40px;
+    background-color: #181823;
+  }
+
+  &__textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 40px;
+    background-color: #181823;
+    resize: vertical;
+  }
+
+  &__button {
+    width: 100%;
+    padding: 24px;
+    font-size: 18px;
+    line-height: 150%;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: $mainColor;
+  }
+}
+@media (max-width: 768px) {
+  .connection {
+    &__wrapper {
+      padding-bottom: 100px;
+    }
+
+    &__box {
+      flex-direction: column;
+    }
+
+    &__description {
+      flex: 1 1 100%;
+    }
+
+    &__text {
+      padding-right: 0px;
+    }
+
+    &__form {
+      padding-top: 70px;
+      display: block;
+    }
   }
 }
 
