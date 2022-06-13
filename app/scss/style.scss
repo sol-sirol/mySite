@@ -1253,6 +1253,11 @@ footer {
     color: #fff;
     text-transform: uppercase;
     background-color: $mainColor;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: #371796;
+    }
   }
 }
 @media (max-width: 768px) {
