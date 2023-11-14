@@ -19,7 +19,7 @@
     "gulp-sass": "^4.1.0",
     "gulp-uglify-es": "^2.0.0",
     "jquery": "^3.6.0",
-    "simplebar": "^5.3.6"
+    "simplebar": "^5.3.9"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
